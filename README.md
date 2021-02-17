@@ -3,6 +3,11 @@
 Zig bindings for elixir-nx.  You can use CPU-mode nx without having to install jvm,
 bazel, and python!
 
+## Seeking Contributors
+
+I don't have very much bandwidth for this, so if you are interested in the intersection of elixir and
+fast computational processing, I'm looking for collaborators/contributors.
+
 ## Instructions
 
 clone elixir-nx (https://github.com/elixir-nx/nx) into a directory at the same level
