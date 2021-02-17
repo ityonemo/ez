@@ -18,6 +18,23 @@ as ez.  When Nx becomes hosted on hex.pm this will not be necessary in the futur
 Zigler seems to (as of 0.7.3) be having some trouble compiling and binding MacOS dynamic libraries.
 See this: https://github.com/ityonemo/zigler/issues/248
 
+## Examples
+
+```elixir
+tensor1 = 
+  |> Nx.tensor([[1.0, 2.0]], type: {:f, 32})
+  |> Nx.backend_transfer(Ez.ZigSliceBackend)
+  
+tensor2 = 
+  |> Nx.tensor([[3.0, 4.0]], type: {:f, 32})
+  |> Nx.backend_transfer(Ez.ZigSliceBackend)
+
+result = Nx.add(tensor1, tensor2)
+
+Nx.to_binary(result) # <<4.0 :: 32-float-native, 6.0 :: 32-float-native>>
+
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
